@@ -3,5 +3,5 @@
 
 # 编译
 ```shell script
-go build -o media -ldflags -H=windowsgui main.go 
+go build -o media.exe -ldflags -H=windowsgui main.go 
 ```
