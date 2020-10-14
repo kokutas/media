@@ -10,7 +10,6 @@ import (
 )
 
 // 欢迎页面
-
 func welcome(application fyne.App) fyne.CanvasObject {
 	// 创建一个logo的图片资源，使用data.fynescene
 	logo := canvas.NewImageFromResource(data.FyneScene)
@@ -22,6 +21,7 @@ func welcome(application fyne.App) fyne.CanvasObject {
 		// 设置logo图片资源的最小尺寸
 		logo.SetMinSize(fyne.NewSize(228, 167))
 	}
+
 	// 返回一个新建的盒子
 	return widget.NewVBox(
 		// NewSpacer返回一个可以填充垂直和水平空间的spacer对象。 这主要用于盒子布局。
@@ -36,10 +36,28 @@ func welcome(application fyne.App) fyne.CanvasObject {
 			widget.NewLabel("-"),
 			widget.NewHyperlink("使用说明", parseURL("https://www.baidu.com/")),
 			widget.NewLabel("-"),
-			widget.NewHyperlink("联系人", parseURL("https://www.baidu.com/")),
+			widget.NewHyperlink("联系我们", parseURL("https://www.baidu.com/")),
 			layout.NewSpacer(),
 		),
 		layout.NewSpacer(),
+
+		// 设置分组
+		/*widget.NewGroup("公网",
+			// 设置网格布局的容器布局：2列
+			fyne.NewContainerWithLayout(layout.NewGridLayout(2),
+				// 设置按钮
+				widget.NewLabel("ip:123456"),
+				widget.NewLabel("port:222"),
+			),
+		),
+		widget.NewGroup("内网",
+			// 设置网格布局的容器布局：2列
+			fyne.NewContainerWithLayout(layout.NewGridLayout(2),
+				// 设置按钮
+				widget.NewLabel("ip:123456"),
+				widget.NewLabel("port:222"),
+			),
+		),*/
 		// 设置分组
 		widget.NewGroup("主题",
 			// 设置网格布局的容器布局：2列
